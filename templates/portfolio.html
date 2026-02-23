@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block title %}Our Projects - Chuksel Construction Limited{% endblock %}
+{% block meta_description %}Browse Chuksel Construction's portfolio of completed and ongoing projects across residential, commercial, industrial, and infrastructure sectors.{% endblock %}
+
+{% block extra_styles %}
+        .filter-btn.active {
+            background: #EBB12F;
+            color: #0B0C10;
+            border-color: #EBB12F;
+        }
+        .project-card {
+            transition: all 0.5s ease;
+        }
+        .project-card.hidden-card {
+            display: none;
+        }
+{% endblock %}
+
+{% block content %}
+<!-- HERO -->
+<section class="relative h-[50vh] sm:h-[60vh] min-h-[400px] flex items-center bg-background-dark overflow-hidden">
+    <div class="absolute inset-0">
+        <img alt="Construction projects" class="h-full w-full object-cover opacity-30" src="{{ url_for('static', filename='images/construction-room.jpg') }}"/>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+        <div class="flex items-center gap-x-4 mb-6">
+            <span class="h-px w-20 bg-primary"></span>
+            <span class="text-primary text-xs font-bold uppercase tracking-[0.25em]">Our Projects</span>
+        </div>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[0.95]">
+            Our <span class="text-primary">Portfolio</span>
+        </h1>
+        <p class="text-lg text-gray-300 font-light max-w-xl mt-6">
+            A showcase of our finest work across multiple sectors — from sleek commercial towers to vital public infrastructure.
+        </p>
+    </div>
+</section>
+
+<!-- FILTER + PROJECTS -->
+<section class="py-24 sm:py-32 bg-background-light dark:bg-background-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style="background-image: linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px);"></div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center items-center gap-3 mb-16 pb-8 border-b border-gray-200 dark:border-white/5" id="filter-bar">
+            <button class="filter-btn active px-5 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-300 dark:border-white/20 text-slate-700 dark:text-white rounded-sm hover:border-primary hover:text-primary transition-all" data-filter="all">All Projects</button>
+            <button class="filter-btn px-5 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-300 dark:border-white/20 text-slate-700 dark:text-white rounded-sm hover:border-primary hover:text-primary transition-all" data-filter="residential">Residential</button>
+            <button class="filter-btn px-5 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-300 dark:border-white/20 text-slate-700 dark:text-white rounded-sm hover:border-primary hover:text-primary transition-all" data-filter="commercial">Commercial</button>
+            <button class="filter-btn px-5 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-300 dark:border-white/20 text-slate-700 dark:text-white rounded-sm hover:border-primary hover:text-primary transition-all" data-filter="industrial">Industrial</button>
+            <button class="filter-btn px-5 py-2.5 text-xs font-bold uppercase tracking-widest border border-gray-300 dark:border-white/20 text-slate-700 dark:text-white rounded-sm hover:border-primary hover:text-primary transition-all" data-filter="infrastructure">Infrastructure</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card group cursor-pointer" data-category="commercial">
+                <div class="relative overflow-hidden rounded-sm aspect-[4/3] mb-5">
+                    <img alt="City Center Mall" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkGsM4WX4E11V0aecMwqQXAd7vfHeN77tkpmZ_eEHwwLaWoChRE3824uEh-nwSV3MtCKf_VC_Ws4SCplQOr-7Nig3regLYc7WXQOXUAfA9SBuqmw9250R8jHPsvJjU4tfjsySXYM3rVSSeeTzh8H3TWsCNI45d4FDyRizg9iGYsRgpmM31wPjtiWxFik4C3ooVuMDJKjLXtJ4q8k5sfKwshWDAoTFLJ3yZP1jZJtJyf_Jn8C_PEHRwNzOuG5MuGUL-WVa5zT6XnsQ"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-background-dark">Commercial</div>
+                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Completed · 2024</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">City Center Mall</h3>
+                <p class="text-sm text-slate-500 flex items-center gap-1.5 mb-2">
+                    <span class="material-symbols-outlined text-sm">location_on</span> Lagos, Nigeria
+                </p>
+                <p class="text-sm text-slate-600 dark:text-gray-400 line-clamp-2">45-story mixed-use commercial tower with retail, office, and luxury hotel spaces.</p>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card group cursor-pointer" data-category="infrastructure">
+                <div class="relative overflow-hidden rounded-sm aspect-[4/3] mb-5">
+                    <img alt="Highway 42 Expansion" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0SDLgTsIJrLsozWuhiSvc9B5h2vk3qPQS9SFHFKYdjNpkTe9_xwhgU1KdV3_Qx5LDf_uqKKBHKY08utb17x0BAxymlTEIPQlpie9wcCsYAwA9vIxUQn5v93-CS16E8cJfMgf4Fdlq5q_oVnpdyXqzqHlzthF4g8i4vUDogOsf_sDhDmPn6d6OvJLWV8UzDrptvcuW9A-BoGeY5J8DUBGq3WP21_TWendR_wwXi19HIDXL7gKctbvWTMGDJFisHsx8pB_3UAzE92o"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-background-dark">Infrastructure</div>
+                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-widest">In Progress · 2025</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Highway 42 Expansion</h3>
+                <p class="text-sm text-slate-500 flex items-center gap-1.5 mb-2">
+                    <span class="material-symbols-outlined text-sm">location_on</span> Abuja, Nigeria
+                </p>
+                <p class="text-sm text-slate-600 dark:text-gray-400 line-clamp-2">20-mile interstate highway expansion with modern drainage and traffic systems.</p>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card group cursor-pointer" data-category="residential">
+                <div class="relative overflow-hidden rounded-sm aspect-[4/3] mb-5">
+                    <img alt="Skyline Residences" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSO7xPx-kAGCOv9zN8k9pg8V5Ob29pCr2EpoTCbgQf6EVvhtod4G49LBt9vTKGSMCoVt2Usa_pYkK51U78pChmBWMWKduz8FV8srbjW381xqK31gkRxoswnMAUNEQx3Za2v4BYNRJhD9cUtlN1fe2GgKuXCiosxL93fCCUcYz4y0YViauhy6EDkXwb_CWzeLA2-4AbkyNDsd53HKCMOUmhcl-0ijk21Iq4ZSGvUNzYajgvM0zXPuFB6PNc1d5L9CwY19oGxHcVhH8"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-background-dark">Residential</div>
+                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Completed · 2023</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Skyline Residences</h3>
+                <p class="text-sm text-slate-500 flex items-center gap-1.5 mb-2">
+                    <span class="material-symbols-outlined text-sm">location_on</span> Port Harcourt, Nigeria
+                </p>
+                <p class="text-sm text-slate-600 dark:text-gray-400 line-clamp-2">Premium 300-unit waterfront residential complex with world-class amenities.</p>
+            </div>
+            <!-- Project 4 (Real image) -->
+            <div class="project-card group cursor-pointer" data-category="commercial">
+                <div class="relative overflow-hidden rounded-sm aspect-[4/3] mb-5">
+                    <img alt="Drywall installation in commercial corridor" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="{{ url_for('static', filename='images/construction-corridor.jpg') }}"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-background-dark">Commercial</div>
+                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-widest">In Progress · 2025</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Amara Commercial Plaza</h3>
+                <p class="text-sm text-slate-500 flex items-center gap-1.5 mb-2">
+                    <span class="material-symbols-outlined text-sm">location_on</span> Lagos, Nigeria
+                </p>
+                <p class="text-sm text-slate-600 dark:text-gray-400 line-clamp-2">Interior finishing phase for a modern commercial plaza with premium drywall and ceiling work.</p>
+            </div>
+            <!-- Project 5 (Real image) -->
+            <div class="project-card group cursor-pointer" data-category="residential">
+                <div class="relative overflow-hidden rounded-sm aspect-[4/3] mb-5">
+                    <img alt="Room with blue drywall panels" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="{{ url_for('static', filename='images/construction-room.jpg') }}"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-background-dark">Residential</div>
+                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-widest">In Progress · 2025</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Lekki Premium Apartments</h3>
+                <p class="text-sm text-slate-500 flex items-center gap-1.5 mb-2">
+                    <span class="material-symbols-outlined text-sm">location_on</span> Lagos, Nigeria
+                </p>
+                <p class="text-sm text-slate-600 dark:text-gray-400 line-clamp-2">Luxury apartment development featuring moisture-resistant drywall and advanced electrical systems.</p>
+            </div>
+            <!-- Project 6 -->
+            <div class="project-card group cursor-pointer" data-category="industrial">
+                <div class="relative overflow-hidden rounded-sm aspect-[4/3] mb-5">
+                    <img alt="Industrial warehouse" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8wYEBqdDa0x41tSAy2drjgsi5Ule0IG5KptWw8onyhBEcYmCGBln4gELrNRBmLRcsSDOxMfQCqj3yuaTEQC9R4qyxzdXHlPSXTXpg89jr76FJyB08YbM4x-uJk0hgE3_WHVjGwYWMd6EGfPQY0xTV765UJMmTmnUyt1Y3BjAzcC0VDp2jPuIc__UN-D-R6xh4UgqVFnJb00kxFHYcCwMJrY4fVNwSHV7Ym_gLOUMrpGAkIX92a7shllyyiLqxhRhCdmb2QGXCQ5o"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 right-4 bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-background-dark">Industrial</div>
+                    <div class="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                        <span class="text-[10px] font-bold text-primary uppercase tracking-widest">Completed · 2024</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Onne Industrial Complex</h3>
+                <p class="text-sm text-slate-500 flex items-center gap-1.5 mb-2">
+                    <span class="material-symbols-outlined text-sm">location_on</span> Rivers State, Nigeria
+                </p>
+                <p class="text-sm text-slate-600 dark:text-gray-400 line-clamp-2">Large-scale industrial warehouse and logistics facility for import/export operations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-primary relative overflow-hidden py-20 sm:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-background-dark sm:text-5xl mb-6">Have a Project in Mind?</h2>
+        <p class="text-lg text-background-dark/80 font-medium max-w-2xl mx-auto mb-10">
+            Let's bring your vision to life. Contact us to discuss your next construction project.
+        </p>
+        <a class="inline-flex items-center justify-center rounded-sm bg-background-dark px-10 py-4 text-sm font-bold text-white hover:bg-black transition-colors uppercase tracking-widest shadow-lg" href="{{ url_for('contact') }}">
+            Start Your Project
+        </a>
+    </div>
+    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Portfolio Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.dataset.filter;
+
+            projectCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.classList.remove('hidden-card');
+                } else {
+                    card.classList.add('hidden-card');
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

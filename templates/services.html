@@ -1,0 +1,275 @@
+{% extends "base.html" %}
+
+{% block title %}Our Services - Chuksel Construction Limited{% endblock %}
+{% block meta_description %}Explore Chuksel Construction's comprehensive services: Civil Engineering, Project Management, General Contracting, Renovation, and Sustainable Building.{% endblock %}
+
+{% block content %}
+<!-- HERO -->
+<section class="relative h-[50vh] sm:h-[60vh] min-h-[400px] flex items-center bg-background-dark overflow-hidden">
+    <div class="absolute inset-0">
+        <img alt="Construction work in progress" class="h-full w-full object-cover opacity-30" src="{{ url_for('static', filename='images/construction-corridor.jpg') }}"/>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+        <div class="flex items-center gap-x-4 mb-6">
+            <span class="h-px w-20 bg-primary"></span>
+            <span class="text-primary text-xs font-bold uppercase tracking-[0.25em]">Our Services</span>
+        </div>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[0.95]">
+            Comprehensive <br/><span class="text-primary">Solutions</span>
+        </h1>
+        <p class="text-lg text-gray-300 font-light max-w-xl mt-6">
+            From concept to completion, we offer end-to-end construction solutions tailored to meet the demands of modern infrastructure.
+        </p>
+    </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="py-24 sm:py-32 bg-background-light dark:bg-background-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style="background-image: linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px);"></div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+            <!-- Service 1 -->
+            <div class="group bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 rounded-sm overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 flex flex-col">
+                <div class="relative overflow-hidden h-56">
+                    <img alt="Civil Engineering" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0SDLgTsIJrLsozWuhiSvc9B5h2vk3qPQS9SFHFKYdjNpkTe9_xwhgU1KdV3_Qx5LDf_uqKKBHKY08utb17x0BAxymlTEIPQlpie9wcCsYAwA9vIxUQn5v93-CS16E8cJfMgf4Fdlq5q_oVnpdyXqzqHlzthF4g8i4vUDogOsf_sDhDmPn6d6OvJLWV8UzDrptvcuW9A-BoGeY5J8DUBGq3WP21_TWendR_wwXi19HIDXL7gKctbvWTMGDJFisHsx8pB_3UAzE92o"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 left-4 bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-background-dark">Core</div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary text-xl">engineering</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Civil Engineering</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-grow">
+                        Expert infrastructure planning and execution for roads, bridges, drainage systems, and public works with cutting-edge engineering techniques.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Roads & Highway Construction
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Bridge Engineering
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Drainage & Foundation Systems
+                        </li>
+                    </ul>
+                    <a class="inline-flex items-center text-xs font-bold text-slate-900 dark:text-white group-hover:text-primary uppercase tracking-widest transition-colors" href="{{ url_for('contact') }}">
+                        Request Quote <span class="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Service 2 -->
+            <div class="group bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 rounded-sm overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 flex flex-col">
+                <div class="relative overflow-hidden h-56">
+                    <img alt="Project Management" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkGsM4WX4E11V0aecMwqQXAd7vfHeN77tkpmZ_eEHwwLaWoChRE3824uEh-nwSV3MtCKf_VC_Ws4SCplQOr-7Nig3regLYc7WXQOXUAfA9SBuqmw9250R8jHPsvJjU4tfjsySXYM3rVSSeeTzh8H3TWsCNI45d4FDyRizg9iGYsRgpmM31wPjtiWxFik4C3ooVuMDJKjLXtJ4q8k5sfKwshWDAoTFLJ3yZP1jZJtJyf_Jn8C_PEHRwNzOuG5MuGUL-WVa5zT6XnsQ"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 left-4 bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-background-dark">Core</div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary text-xl">assignment</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Project Management</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-grow">
+                        End-to-end project oversight guaranteeing on-time, on-budget delivery through meticulous scheduling and resource allocation.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Cost Estimation & Budgeting
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Timeline Management
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Quality Assurance
+                        </li>
+                    </ul>
+                    <a class="inline-flex items-center text-xs font-bold text-slate-900 dark:text-white group-hover:text-primary uppercase tracking-widest transition-colors" href="{{ url_for('contact') }}">
+                        Request Quote <span class="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="group bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 rounded-sm overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 flex flex-col">
+                <div class="relative overflow-hidden h-56">
+                    <img alt="General Contracting" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="{{ url_for('static', filename='images/construction-room.jpg') }}"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 left-4 bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-background-dark">Core</div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary text-xl">domain</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">General Contracting</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-grow">
+                        Full-service construction management for commercial, industrial, and residential projects of any scale.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Commercial Buildings
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Industrial Facilities
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Residential Complexes
+                        </li>
+                    </ul>
+                    <a class="inline-flex items-center text-xs font-bold text-slate-900 dark:text-white group-hover:text-primary uppercase tracking-widest transition-colors" href="{{ url_for('contact') }}">
+                        Request Quote <span class="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Service 4 -->
+            <div class="group bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 rounded-sm overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 flex flex-col">
+                <div class="relative overflow-hidden h-56">
+                    <img alt="Renovation and Remodeling" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZBJbLGWP8WUGnFvB-UnfADdOV_lZqXk6VZmmZFydyuXsheFFraBXHeiLUfNnXcP9141Qn-NgXx-5nLh_fItW9CRaaIVCmrn-lGyrQXkgw9AQ5H_IwPjgfJrAohW1orbie7vrYhI7s4WrTTi4gz3NY22X55Pjbtbgk-hi7opCx3zxgVHkoMCSE9l5sNBnJPvnMYXmNmb9KDiPDU55GBcUa93EI-ZFBpg4imC31JSxWAFalCPq5ezs_hC4ebzn7aAJCnnXZ3fUPJ24"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 left-4 bg-white/90 dark:bg-white/10 backdrop-blur-sm px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-900 dark:text-white">Specialty</div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary text-xl">home_repair_service</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Renovation & Remodeling</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-grow">
+                        Transforming existing spaces with modern aesthetics and improved functionality while maintaining structural integrity.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Interior Remodeling
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Structural Renovations
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Historic Preservation
+                        </li>
+                    </ul>
+                    <a class="inline-flex items-center text-xs font-bold text-slate-900 dark:text-white group-hover:text-primary uppercase tracking-widest transition-colors" href="{{ url_for('contact') }}">
+                        Request Quote <span class="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Service 5 -->
+            <div class="group bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 rounded-sm overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 flex flex-col">
+                <div class="relative overflow-hidden h-56">
+                    <img alt="Sustainable Building" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8wYEBqdDa0x41tSAy2drjgsi5Ule0IG5KptWw8onyhBEcYmCGBln4gELrNRBmLRcsSDOxMfQCqj3yuaTEQC9R4qyxzdXHlPSXTXpg89jr76FJyB08YbM4x-uJk0hgE3_WHVjGwYWMd6EGfPQY0xTV765UJMmTmnUyt1Y3BjAzcC0VDp2jPuIc__UN-D-R6xh4UgqVFnJb00kxFHYcCwMJrY4fVNwSHV7Ym_gLOUMrpGAkIX92a7shllyyiLqxhRhCdmb2QGXCQ5o"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 left-4 bg-white/90 dark:bg-white/10 backdrop-blur-sm px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-900 dark:text-white">Specialty</div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary text-xl">eco</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Sustainable Building</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-grow">
+                        Green building solutions that minimize environmental impact while maximizing efficiency and occupant comfort.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> LEED Certification
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Solar Integration
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Rainwater Harvesting
+                        </li>
+                    </ul>
+                    <a class="inline-flex items-center text-xs font-bold text-slate-900 dark:text-white group-hover:text-primary uppercase tracking-widest transition-colors" href="{{ url_for('contact') }}">
+                        Request Quote <span class="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Service 6 -->
+            <div class="group bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 rounded-sm overflow-hidden hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 flex flex-col">
+                <div class="relative overflow-hidden h-56">
+                    <img alt="Architectural Design" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSO7xPx-kAGCOv9zN8k9pg8V5Ob29pCr2EpoTCbgQf6EVvhtod4G49LBt9vTKGSMCoVt2Usa_pYkK51U78pChmBWMWKduz8FV8srbjW381xqK31gkRxoswnMAUNEQx3Za2v4BYNRJhD9cUtlN1fe2GgKuXCiosxL93fCCUcYz4y0YViauhy6EDkXwb_CWzeLA2-4AbkyNDsd53HKCMOUmhcl-0ijk21Iq4ZSGvUNzYajgvM0zXPuFB6PNc1d5L9CwY19oGxHcVhH8"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="absolute top-4 left-4 bg-white/90 dark:bg-white/10 backdrop-blur-sm px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-slate-900 dark:text-white">Specialty</div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="material-symbols-outlined text-primary text-xl">architecture</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Architectural Design</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6 flex-grow">
+                        Creative design solutions that blend aesthetics with functionality, creating spaces that inspire and endure.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Conceptual Design
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> 3D Visualization
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                            <span class="material-symbols-outlined text-primary text-sm">check_circle</span> Technical Drawings
+                        </li>
+                    </ul>
+                    <a class="inline-flex items-center text-xs font-bold text-slate-900 dark:text-white group-hover:text-primary uppercase tracking-widest transition-colors" href="{{ url_for('contact') }}">
+                        Request Quote <span class="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROCESS -->
+        <div class="text-center mb-16">
+            <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Our Process</h2>
+            <p class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white">How We <span class="text-primary">Work</span></p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="relative text-center group">
+                <div class="w-16 h-16 mx-auto mb-6 bg-primary flex items-center justify-center text-background-dark font-black text-xl rounded-sm group-hover:shadow-[0_0_25px_rgba(235,177,47,0.4)] transition-shadow">
+                    01
+                </div>
+                <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider">Consultation</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Understanding your needs, budget, and project timeline.</p>
+                <div class="hidden lg:block absolute top-8 left-[60%] w-[80%] h-px bg-primary/30"></div>
+            </div>
+            <div class="relative text-center group">
+                <div class="w-16 h-16 mx-auto mb-6 bg-primary flex items-center justify-center text-background-dark font-black text-xl rounded-sm group-hover:shadow-[0_0_25px_rgba(235,177,47,0.4)] transition-shadow">
+                    02
+                </div>
+                <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider">Planning</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Detailed blueprints, cost estimates, and scheduling.</p>
+                <div class="hidden lg:block absolute top-8 left-[60%] w-[80%] h-px bg-primary/30"></div>
+            </div>
+            <div class="relative text-center group">
+                <div class="w-16 h-16 mx-auto mb-6 bg-primary flex items-center justify-center text-background-dark font-black text-xl rounded-sm group-hover:shadow-[0_0_25px_rgba(235,177,47,0.4)] transition-shadow">
+                    03
+                </div>
+                <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider">Execution</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Skilled implementation with strict quality control.</p>
+                <div class="hidden lg:block absolute top-8 left-[60%] w-[80%] h-px bg-primary/30"></div>
+            </div>
+            <div class="text-center group">
+                <div class="w-16 h-16 mx-auto mb-6 bg-primary flex items-center justify-center text-background-dark font-black text-xl rounded-sm group-hover:shadow-[0_0_25px_rgba(235,177,47,0.4)] transition-shadow">
+                    04
+                </div>
+                <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 uppercase tracking-wider">Delivery</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400">Handover, final inspection, and client satisfaction.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-primary relative overflow-hidden py-20 sm:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-background-dark sm:text-5xl mb-6">Need a Custom Solution?</h2>
+        <p class="text-lg text-background-dark/80 font-medium max-w-2xl mx-auto mb-10">
+            Every project is unique. Let's discuss how we can tailor our services to meet your specific requirements.
+        </p>
+        <a class="inline-flex items-center justify-center rounded-sm bg-background-dark px-10 py-4 text-sm font-bold text-white hover:bg-black transition-colors uppercase tracking-widest shadow-lg" href="{{ url_for('contact') }}">
+            Schedule a Consultation
+        </a>
+    </div>
+    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+</section>
+{% endblock %}

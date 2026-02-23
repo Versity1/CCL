@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>{% block title %}Chuksel Construction Limited (CCL){% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Chuksel Construction Limited (CCL) - Premier construction company delivering excellence in civil engineering, project management, and general contracting.{% endblock %}"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#EBB12F",
+                        "primary-hover": "#C99522",
+                        "accent": "#F3CF55",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#0B0C10",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#15171E",
+                        "surface-darker": "#0F1116",
+                        "text-main": "#0f1115",
+                        "text-muted": "#9CA3AF",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "sans": ["Manrope", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px)",
+                    },
+                    keyframes: {
+                        'fade-in': {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        'slide-up': {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        'slide-in-right': {
+                            '0%': { transform: 'translateX(100%)' },
+                            '100%': { transform: 'translateX(0)' },
+                        },
+                        'slide-out-right': {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(100%)' },
+                        },
+                        'progress-loading': {
+                            '0%': { width: '0%' },
+                            '100%': { width: '100%' },
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'slide-up': 'slide-up 1s ease-out 0.3s forwards',
+                        'slide-in-right': 'slide-in-right 0.3s ease-out forwards',
+                        'slide-out-right': 'slide-out-right 0.3s ease-out forwards',
+                        'progress': 'progress-loading 5s linear infinite',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0C10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EBB12F;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass-nav {
+            background: rgba(11, 12, 16, 0.7);
+        }
+        .offcanvas-overlay {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+        .glass-panel {
+            background: rgba(21, 26, 35, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(235, 177, 47, 0.15);
+        }
+        {% block extra_styles %}{% endblock %}
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-gray-100 transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 w-full border-b border-gray-200/50 dark:border-white/10 glass-nav transition-all duration-300">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <!-- Logo -->
+            <a href="{{ url_for('home') }}" class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center bg-primary rounded-sm">
+                    <span class="material-symbols-outlined text-background-dark text-2xl">construction</span>
+                </div>
+                <div class="flex flex-col leading-none">
+                    <span class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">CCL</span>
+                    <span class="text-[9px] font-medium text-slate-500 dark:text-gray-500 uppercase tracking-[0.15em]">Construction</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-10">
+                <a class="text-xs font-bold uppercase tracking-[0.15em] {{ 'text-primary' if request.endpoint == 'home' else 'text-slate-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary' }} transition-colors" href="{{ url_for('home') }}">Home</a>
+                <a class="text-xs font-bold uppercase tracking-[0.15em] {{ 'text-primary' if request.endpoint == 'about' else 'text-slate-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary' }} transition-colors" href="{{ url_for('about') }}">About</a>
+                <a class="text-xs font-bold uppercase tracking-[0.15em] {{ 'text-primary' if request.endpoint == 'services' else 'text-slate-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary' }} transition-colors" href="{{ url_for('services') }}">Services</a>
+                <a class="text-xs font-bold uppercase tracking-[0.15em] {{ 'text-primary' if request.endpoint == 'projects' else 'text-slate-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary' }} transition-colors" href="{{ url_for('projects') }}">Projects</a>
+                <a class="text-xs font-bold uppercase tracking-[0.15em] {{ 'text-primary' if request.endpoint == 'contact' else 'text-slate-700 hover:text-primary dark:text-gray-300 dark:hover:text-primary' }} transition-colors" href="{{ url_for('contact') }}">Contact</a>
+            </nav>
+
+            <!-- Right Side -->
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle -->
+                <button aria-label="Toggle Dark Mode" class="rounded-full p-2 text-slate-500 hover:bg-gray-100 dark:text-slate-400 dark:hover:bg-white/5 focus:outline-none transition-colors" id="theme-toggle">
+                    <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+                    <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+                </button>
+                <!-- CTA Button (Desktop) -->
+                <a class="hidden sm:flex items-center justify-center rounded-sm bg-primary px-6 py-3 text-xs font-bold text-background-dark shadow-sm hover:bg-white hover:text-background-dark border border-transparent hover:border-primary transition-all focus:outline-none uppercase tracking-widest" href="{{ url_for('contact') }}">
+                    Request a Quote
+                </a>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden rounded-lg p-2 text-slate-700 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-800" id="offcanvas-open" aria-label="Open Menu">
+                    <span class="material-symbols-outlined text-2xl">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE OFFCANVAS -->
+    <div id="offcanvas-overlay" class="fixed inset-0 z-[60] offcanvas-overlay hidden" aria-hidden="true"></div>
+    <div id="offcanvas-menu" class="fixed top-0 right-0 z-[70] h-full w-80 max-w-[85vw] bg-white dark:bg-background-dark border-l border-gray-200 dark:border-white/10 shadow-2xl transform translate-x-full transition-transform duration-300 ease-out flex flex-col" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+        <!-- Menu Header -->
+        <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100 dark:border-white/10">
+            <div class="flex items-center gap-3">
+                <div class="flex h-8 w-8 items-center justify-center bg-primary rounded-sm">
+                    <span class="material-symbols-outlined text-background-dark text-lg">construction</span>
+                </div>
+                <span class="text-base font-bold text-slate-900 dark:text-white">CCL</span>
+            </div>
+            <button class="rounded-lg p-2 text-slate-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white/5 transition-colors" id="offcanvas-close" aria-label="Close Menu">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <!-- Menu Links -->
+        <nav class="flex-1 flex flex-col gap-1 px-4 py-6 overflow-y-auto">
+            <a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-sm font-semibold {{ 'text-primary bg-primary/10' if request.endpoint == 'home' else 'text-slate-700 dark:text-gray-300 hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10' }} transition-all" href="{{ url_for('home') }}">
+                <span class="material-symbols-outlined text-xl">home</span> Home
+            </a>
+            <a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-sm font-semibold {{ 'text-primary bg-primary/10' if request.endpoint == 'about' else 'text-slate-700 dark:text-gray-300 hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10' }} transition-all" href="{{ url_for('about') }}">
+                <span class="material-symbols-outlined text-xl">info</span> About Us
+            </a>
+            <a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-sm font-semibold {{ 'text-primary bg-primary/10' if request.endpoint == 'services' else 'text-slate-700 dark:text-gray-300 hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10' }} transition-all" href="{{ url_for('services') }}">
+                <span class="material-symbols-outlined text-xl">engineering</span> Services
+            </a>
+            <a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-sm font-semibold {{ 'text-primary bg-primary/10' if request.endpoint == 'projects' else 'text-slate-700 dark:text-gray-300 hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10' }} transition-all" href="{{ url_for('projects') }}">
+                <span class="material-symbols-outlined text-xl">apartment</span> Projects
+            </a>
+            <a class="flex items-center gap-4 px-4 py-3.5 rounded-lg text-sm font-semibold {{ 'text-primary bg-primary/10' if request.endpoint == 'contact' else 'text-slate-700 dark:text-gray-300 hover:text-primary hover:bg-primary/5 dark:hover:bg-primary/10' }} transition-all" href="{{ url_for('contact') }}">
+                <span class="material-symbols-outlined text-xl">mail</span> Contact
+            </a>
+        </nav>
+        <!-- Menu Footer -->
+        <div class="px-4 py-6 border-t border-gray-100 dark:border-white/10">
+            <a class="flex items-center justify-center w-full rounded-sm bg-primary px-6 py-3.5 text-xs font-bold text-background-dark hover:bg-white hover:text-background-dark border border-transparent hover:border-primary transition-all uppercase tracking-widest" href="{{ url_for('contact') }}">
+                Request a Quote
+            </a>
+            <div class="flex items-center justify-center gap-6 mt-6">
+                <a class="text-gray-400 hover:text-primary transition-colors" href="#" aria-label="Facebook">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+                </a>
+                <a class="text-gray-400 hover:text-primary transition-colors" href="#" aria-label="LinkedIn">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path></svg>
+                </a>
+                <a class="text-gray-400 hover:text-primary transition-colors" href="#" aria-label="Instagram">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-background-dark text-white border-t border-white/5 pt-20 pb-10">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="xl:grid xl:grid-cols-4 xl:gap-12 mb-16">
+                <!-- Brand -->
+                <div class="col-span-1 xl:col-span-1 space-y-8 mb-12 xl:mb-0">
+                    <div class="flex items-center gap-3">
+                        <div class="flex h-10 w-10 items-center justify-center bg-primary rounded-sm">
+                            <span class="material-symbols-outlined text-background-dark text-xl">construction</span>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight">Chuksel Construction</span>
+                    </div>
+                    <p class="text-sm leading-6 text-gray-400 max-w-xs">
+                        Building tomorrow's landmarks with today's innovation. Committed to excellence in every brick and beam.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 hover:bg-primary hover:text-background-dark hover:border-primary transition-all" href="#">
+                            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+                        </a>
+                        <a class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 hover:bg-primary hover:text-background-dark hover:border-primary transition-all" href="#">
+                            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path></svg>
+                        </a>
+                        <a class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-gray-400 hover:bg-primary hover:text-background-dark hover:border-primary transition-all" href="#">
+                            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Footer Links -->
+                <div class="col-span-1 xl:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-xs font-bold leading-6 text-white uppercase tracking-widest mb-6">Services</h3>
+                        <ul class="space-y-4" role="list">
+                            <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('services') }}">Civil Engineering</a></li>
+                            <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('services') }}">Project Management</a></li>
+                            <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('services') }}">General Contracting</a></li>
+                            <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('services') }}">Renovation</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-bold leading-6 text-white uppercase tracking-widest mb-6">Company</h3>
+                        <ul class="space-y-4" role="list">
+                            <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('about') }}">About Us</a></li>
+                            <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('projects') }}">Projects</a></li>
+                            <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('contact') }}">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-span-2 md:col-span-1 mt-8 md:mt-0">
+                        <h3 class="text-xs font-bold leading-6 text-white uppercase tracking-widest mb-6">Contact</h3>
+                        <ul class="space-y-4" role="list">
+                            <li class="flex items-start gap-3 text-sm text-gray-400">
+                                <span class="material-symbols-outlined text-sm text-primary mt-0.5">location_on</span>
+                                <span>123 Construction Ave,<br/>Lagos, Nigeria</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-400">
+                                <span class="material-symbols-outlined text-sm text-primary">call</span>
+                                +234 800 123 4567
+                            </li>
+                            <li class="flex items-center gap-3 text-sm text-gray-400">
+                                <span class="material-symbols-outlined text-sm text-primary">mail</span>
+                                info@chuksel.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs leading-5 text-gray-500">© 2025 Chuksel Construction Limited. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a class="text-xs text-gray-500 hover:text-white transition-colors" href="#">Privacy Policy</a>
+                    <a class="text-xs text-gray-500 hover:text-white transition-colors" href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- WhatsApp Floating Widget -->
+<a href="https://wa.me/447404100860" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 left-6 z-[100] flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg hover:bg-[#128C7E] hover:-translate-y-1 transition-all duration-300" aria-label="Chat on WhatsApp">
+    <svg fill="currentColor" viewBox="0 0 24 24" class="h-8 w-8">
+        <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.128.552 4.195 1.603 6.01L.003 24l6.095-1.594A11.968 11.968 0 0012.031 24c6.645 0 12.031-5.384 12.031-12.03S18.677 0 12.031 0zm0 22.012a9.927 9.927 0 01-5.084-1.396l-.364-.216-3.778.99.997-3.684-.236-.376A9.914 9.914 0 011.986 12.03c0-5.542 4.507-10.048 10.045-10.048 5.54 0 10.046 4.506 10.046 10.048 0 5.541-4.506 10.046-10.046 10.046zm5.518-7.534c-.302-.152-1.789-.884-2.065-.986-.276-.102-.477-.152-.678.152-.201.303-.781.985-.957 1.187-.175.202-.352.227-.654.075-2.016-1.01-3.486-1.92-4.808-3.424-.34-.388-.135-.558.016-.709.135-.136.302-.353.453-.531.152-.177.202-.303.303-.505.101-.202.05-.38-.025-.531-.076-.153-.678-1.638-.929-2.245-.245-.592-.494-.511-.678-.521-.176-.008-.376-.01-.577-.01-.202 0-.528.076-.804.38-.277.303-1.055 1.033-1.055 2.522s1.08 2.926 1.231 3.128c.151.203 2.131 3.328 5.161 4.636 1.83.791 2.52.88 3.424.743.76-.115 2.321-.951 2.646-1.87.325-.918.325-1.705.228-1.87-.099-.164-.376-.265-.678-.417z"></path>
+    </svg>
+</a>
+
+<!-- SCRIPTS -->
+<script>
+    // Dark Mode Toggle
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+    } else {
+        htmlElement.classList.remove('dark');
+    }
+    themeToggleBtn.addEventListener('click', function() {
+        htmlElement.classList.toggle('dark');
+        if (htmlElement.classList.contains('dark')) {
+            localStorage.setItem('color-theme', 'dark');
+        } else {
+            localStorage.setItem('color-theme', 'light');
+        }
+    });
+
+    // Offcanvas Navigation
+    const offcanvasOpen = document.getElementById('offcanvas-open');
+    const offcanvasClose = document.getElementById('offcanvas-close');
+    const offcanvasOverlay = document.getElementById('offcanvas-overlay');
+    const offcanvasMenu = document.getElementById('offcanvas-menu');
+
+    function openOffcanvas() {
+        offcanvasOverlay.classList.remove('hidden');
+        offcanvasMenu.style.transform = 'translateX(0)';
+        document.body.style.overflow = 'hidden';
+    }
+    function closeOffcanvas() {
+        offcanvasMenu.style.transform = 'translateX(100%)';
+        offcanvasOverlay.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+    offcanvasOpen.addEventListener('click', openOffcanvas);
+    offcanvasClose.addEventListener('click', closeOffcanvas);
+    offcanvasOverlay.addEventListener('click', closeOffcanvas);
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeOffcanvas();
+    });
+</script>
+{% block extra_scripts %}{% endblock %}
+</body>
+</html>

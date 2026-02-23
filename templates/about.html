@@ -1,0 +1,243 @@
+{% extends "base.html" %}
+
+{% block title %}About Us - Chuksel Construction Limited{% endblock %}
+{% block meta_description %}Learn about Chuksel Construction Limited's 25+ year history, mission, values, and leadership team in civil engineering and construction.{% endblock %}
+
+{% block extra_styles %}
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #EBB12F, transparent);
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 20px;
+            }
+        }
+{% endblock %}
+
+{% block content %}
+<!-- HERO -->
+<section class="relative h-[50vh] sm:h-[60vh] min-h-[400px] flex items-center bg-background-dark overflow-hidden">
+    <div class="absolute inset-0">
+        <img alt="Construction team at work" class="h-full w-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkGsM4WX4E11V0aecMwqQXAd7vfHeN77tkpmZ_eEHwwLaWoChRE3824uEh-nwSV3MtCKf_VC_Ws4SCplQOr-7Nig3regLYc7WXQOXUAfA9SBuqmw9250R8jHPsvJjU4tfjsySXYM3rVSSeeTzh8H3TWsCNI45d4FDyRizg9iGYsRgpmM31wPjtiWxFik4C3ooVuMDJKjLXtJ4q8k5sfKwshWDAoTFLJ3yZP1jZJtJyf_Jn8C_PEHRwNzOuG5MuGUL-WVa5zT6XnsQ"/>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+        <div class="flex items-center gap-x-4 mb-6">
+            <span class="h-px w-20 bg-primary"></span>
+            <span class="text-primary text-xs font-bold uppercase tracking-[0.25em]">About Us</span>
+        </div>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[0.95]">
+            Building <span class="text-primary">Legacy</span>,<br/>Shaping Futures
+        </h1>
+    </div>
+</section>
+
+<!-- MISSION, VISION, VALUES -->
+<section class="py-24 sm:py-32 bg-background-light dark:bg-background-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style="background-image: linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px);"></div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10">
+            <!-- Mission -->
+            <div class="group bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 p-8 sm:p-10 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                <div class="flex h-14 w-14 items-center justify-center bg-gray-50 dark:bg-white/5 text-primary mb-8 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                    <span class="material-symbols-outlined text-2xl">flag</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 uppercase tracking-wider">Our Mission</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    To deliver world-class construction services that exceed client expectations, create sustainable infrastructure, and foster long-term partnerships built on trust and integrity.
+                </p>
+            </div>
+            <!-- Vision -->
+            <div class="group bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 p-8 sm:p-10 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                <div class="flex h-14 w-14 items-center justify-center bg-gray-50 dark:bg-white/5 text-primary mb-8 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                    <span class="material-symbols-outlined text-2xl">visibility</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 uppercase tracking-wider">Our Vision</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    To be the most trusted and innovative construction partner in Africa, leading the industry through sustainable engineering practices and cutting-edge technology.
+                </p>
+            </div>
+            <!-- Values -->
+            <div class="group bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 p-8 sm:p-10 hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                <div class="flex h-14 w-14 items-center justify-center bg-gray-50 dark:bg-white/5 text-primary mb-8 group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                    <span class="material-symbols-outlined text-2xl">diamond</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4 uppercase tracking-wider">Our Values</h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Integrity, Safety, Innovation, Sustainability, and Excellence form the foundation of every project we undertake, ensuring quality results for all stakeholders.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COMPANY HISTORY TIMELINE -->
+<section class="py-24 sm:py-32 bg-gray-100 dark:bg-surface-darker border-y border-gray-200 dark:border-white/5 overflow-hidden">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="text-center mb-16 sm:mb-20">
+            <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Our Journey</h2>
+            <p class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white sm:text-5xl">A History of <span class="text-primary">Excellence</span></p>
+        </div>
+        <div class="relative">
+            <div class="timeline-line hidden md:block"></div>
+            <!-- 1998 -->
+            <div class="mb-12 md:flex md:items-center">
+                <div class="md:w-1/2 md:pr-16 md:text-right mb-4 md:mb-0">
+                    <div class="bg-white dark:bg-surface-dark p-6 sm:p-8 border border-gray-100 dark:border-white/5 inline-block rounded-sm shadow-sm">
+                        <span class="text-5xl sm:text-6xl font-black text-primary/20 block mb-2">1998</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Company Founded</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Chuksel Construction Limited was established in Lagos, starting as a small residential contracting firm.</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center justify-center relative z-10">
+                    <div class="w-5 h-5 rounded-full bg-primary shadow-[0_0_15px_rgba(235,177,47,0.5)]"></div>
+                </div>
+                <div class="md:w-1/2 md:pl-16"></div>
+            </div>
+            <!-- 2005 -->
+            <div class="mb-12 md:flex md:items-center">
+                <div class="md:w-1/2 md:pr-16 hidden md:block"></div>
+                <div class="hidden md:flex items-center justify-center relative z-10">
+                    <div class="w-5 h-5 rounded-full bg-primary shadow-[0_0_15px_rgba(235,177,47,0.5)]"></div>
+                </div>
+                <div class="md:w-1/2 md:pl-16">
+                    <div class="bg-white dark:bg-surface-dark p-6 sm:p-8 border border-gray-100 dark:border-white/5 inline-block rounded-sm shadow-sm">
+                        <span class="text-5xl sm:text-6xl font-black text-primary/20 block mb-2">2005</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">First Major Contract</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Secured first government infrastructure contract, expanding operations to Abuja and Port Harcourt.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 2012 -->
+            <div class="mb-12 md:flex md:items-center">
+                <div class="md:w-1/2 md:pr-16 md:text-right mb-4 md:mb-0">
+                    <div class="bg-white dark:bg-surface-dark p-6 sm:p-8 border border-gray-100 dark:border-white/5 inline-block rounded-sm shadow-sm">
+                        <span class="text-5xl sm:text-6xl font-black text-primary/20 block mb-2">2012</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">ISO Certification</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Achieved ISO 9001 and ISO 14001 certifications, demonstrating commitment to quality and environmental management.</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center justify-center relative z-10">
+                    <div class="w-5 h-5 rounded-full bg-primary shadow-[0_0_15px_rgba(235,177,47,0.5)]"></div>
+                </div>
+                <div class="md:w-1/2 md:pl-16"></div>
+            </div>
+            <!-- 2023 -->
+            <div class="md:flex md:items-center">
+                <div class="md:w-1/2 md:pr-16 hidden md:block"></div>
+                <div class="hidden md:flex items-center justify-center relative z-10">
+                    <div class="w-5 h-5 rounded-full bg-primary shadow-[0_0_15px_rgba(235,177,47,0.5)]"></div>
+                </div>
+                <div class="md:w-1/2 md:pl-16">
+                    <div class="bg-white dark:bg-surface-dark p-6 sm:p-8 border border-gray-100 dark:border-white/5 inline-block rounded-sm shadow-sm">
+                        <span class="text-5xl sm:text-6xl font-black text-primary/20 block mb-2">2023</span>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Industry Leader</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Surpassed 100+ projects milestone, now employing over 500 specialists with a presence across West Africa.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LEADERSHIP TEAM -->
+<section class="py-24 sm:py-32 bg-background-light dark:bg-background-dark">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="text-center mb-16 sm:mb-20">
+            <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Leadership</h2>
+            <p class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white sm:text-5xl">Our <span class="text-primary">Team</span></p>
+            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mt-6">Meet the experienced professionals driving innovation and excellence in every project.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="group text-center">
+                <div class="relative overflow-hidden rounded-sm aspect-[3/4] mb-6 bg-gray-200 dark:bg-surface-dark">
+                    <img alt="CEO Portrait" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSO7xPx-kAGCOv9zN8k9pg8V5Ob29pCr2EpoTCbgQf6EVvhtod4G49LBt9vTKGSMCoVt2Usa_pYkK51U78pChmBWMWKduz8FV8srbjW381xqK31gkRxoswnMAUNEQx3Za2v4BYNRJhD9cUtlN1fe2GgKuXCiosxL93fCCUcYz4y0YViauhy6EDkXwb_CWzeLA2-4AbkyNDsd53HKCMOUmhcl-0ijk21Iq4ZSGvUNzYajgvM0zXPuFB6PNc1d5L9CwY19oGxHcVhH8"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Chukwuemeka Nwosu</h3>
+                <p class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Chief Executive Officer</p>
+                <p class="text-sm text-slate-500 dark:text-gray-400">30+ years in construction and civil engineering leadership.</p>
+            </div>
+            <div class="group text-center">
+                <div class="relative overflow-hidden rounded-sm aspect-[3/4] mb-6 bg-gray-200 dark:bg-surface-dark">
+                    <img alt="COO Portrait" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0SDLgTsIJrLsozWuhiSvc9B5h2vk3qPQS9SFHFKYdjNpkTe9_xwhgU1KdV3_Qx5LDf_uqKKBHKY08utb17x0BAxymlTEIPQlpie9wcCsYAwA9vIxUQn5v93-CS16E8cJfMgf4Fdlq5q_oVnpdyXqzqHlzthF4g8i4vUDogOsf_sDhDmPn6d6OvJLWV8UzDrptvcuW9A-BoGeY5J8DUBGq3WP21_TWendR_wwXi19HIDXL7gKctbvWTMGDJFisHsx8pB_3UAzE92o"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Adaeze Okafor</h3>
+                <p class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Chief Operations Officer</p>
+                <p class="text-sm text-slate-500 dark:text-gray-400">Expert in project management and operational efficiency.</p>
+            </div>
+            <div class="group text-center">
+                <div class="relative overflow-hidden rounded-sm aspect-[3/4] mb-6 bg-gray-200 dark:bg-surface-dark">
+                    <img alt="Chief Engineer Portrait" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZBJbLGWP8WUGnFvB-UnfADdOV_lZqXk6VZmmZFydyuXsheFFraBXHeiLUfNnXcP9141Qn-NgXx-5nLh_fItW9CRaaIVCmrn-lGyrQXkgw9AQ5H_IwPjgfJrAohW1orbie7vrYhI7s4WrTTi4gz3NY22X55Pjbtbgk-hi7opCx3zxgVHkoMCSE9l5sNBnJPvnMYXmNmb9KDiPDU55GBcUa93EI-ZFBpg4imC31JSxWAFalCPq5ezs_hC4ebzn7aAJCnnXZ3fUPJ24"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Emeka Ibe</h3>
+                <p class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Chief Engineer</p>
+                <p class="text-sm text-slate-500 dark:text-gray-400">Structural engineering specialist with 20+ years of experience.</p>
+            </div>
+            <div class="group text-center">
+                <div class="relative overflow-hidden rounded-sm aspect-[3/4] mb-6 bg-gray-200 dark:bg-surface-dark">
+                    <img alt="Director of Sustainability Portrait" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8wYEBqdDa0x41tSAy2drjgsi5Ule0IG5KptWw8onyhBEcYmCGBln4gELrNRBmLRcsSDOxMfQCqj3yuaTEQC9R4qyxzdXHlPSXTXpg89jr76FJyB08YbM4x-uJk0hgE3_WHVjGwYWMd6EGfPQY0xTV765UJMmTmnUyt1Y3BjAzcC0VDp2jPuIc__UN-D-R6xh4UgqVFnJb00kxFHYcCwMJrY4fVNwSHV7Ym_gLOUMrpGAkIX92a7shllyyiLqxhRhCdmb2QGXCQ5o"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Grace Bassey</h3>
+                <p class="text-xs font-bold text-primary uppercase tracking-widest mb-2">Director of Sustainability</p>
+                <p class="text-sm text-slate-500 dark:text-gray-400">Leading green construction practices and environmental compliance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="py-24 bg-gray-50 dark:bg-surface-darker border-t border-gray-200 dark:border-white/5">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Accreditations</h2>
+            <p class="text-3xl font-black tracking-tight text-slate-900 dark:text-white">Certified <span class="text-primary">Excellence</span></p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 sm:gap-8">
+            <div class="flex items-center gap-3 bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 px-6 py-4 rounded-sm">
+                <span class="material-symbols-outlined text-primary text-xl">verified</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-white">ISO 9001:2015</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 px-6 py-4 rounded-sm">
+                <span class="material-symbols-outlined text-primary text-xl">eco</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-white">ISO 14001:2015</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 px-6 py-4 rounded-sm">
+                <span class="material-symbols-outlined text-primary text-xl">health_and_safety</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-white">OHSAS 18001</span>
+            </div>
+            <div class="flex items-center gap-3 bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 px-6 py-4 rounded-sm">
+                <span class="material-symbols-outlined text-primary text-xl">workspace_premium</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-white">LEED Certified</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-primary relative overflow-hidden py-20 sm:py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-background-dark sm:text-5xl mb-6">Partner With Us</h2>
+        <p class="text-lg text-background-dark/80 font-medium max-w-2xl mx-auto mb-10">
+            Let's build something extraordinary together. Reach out to discuss your next project.
+        </p>
+        <a class="inline-flex items-center justify-center rounded-sm bg-background-dark px-10 py-4 text-sm font-bold text-white hover:bg-black transition-colors uppercase tracking-widest shadow-lg" href="{{ url_for('contact') }}">
+            Get in Touch
+        </a>
+    </div>
+    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+</section>
+{% endblock %}

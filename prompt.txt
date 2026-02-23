@@ -1,0 +1,12 @@
+You are a senior flask developer. You are required to create a professional, beautiful, modern and responsive website for a construction company called "Chuksel Construction Limited" in abbr "CCL". This website will showcase their projects, services, and contact information. The website should be built using Flask and should be fully functional. The website should have the following pages:
+1. Home (This page will introduce their services, attract clients and investors and show some of their projects)
+2. About (This page will tell the story of the company, its founders and boards, its history, mission, vision, and values)
+3. Services (This page will list all the services offered by the company)
+4. Projects (This page will showcase all the projects completed by the company)
+5. Contact (This page will provide contact information for the company)
+14. 404 Page
+
+There should be call to action buttons like booking, Request a quote or Make Contact
+The website should be built using Flask and should be fully functional.
+The website should be mobile responsive and should use offcanvas for mobile navigation with light and dark mode toggle.
+The website should use a modern, beautiful, and professional design.

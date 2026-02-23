@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - Chuksel Construction Limited{% endblock %}
+{% block meta_description %}Get in touch with Chuksel Construction Limited. Request a quote, schedule a consultation, or reach us at our Lagos office.{% endblock %}
+
+{% block content %}
+<!-- HERO -->
+<section class="relative h-[40vh] sm:h-[50vh] min-h-[350px] flex items-center bg-background-dark overflow-hidden">
+    <div class="absolute inset-0">
+        <img alt="Modern office building" class="h-full w-full object-cover opacity-25" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSO7xPx-kAGCOv9zN8k9pg8V5Ob29pCr2EpoTCbgQf6EVvhtod4G49LBt9vTKGSMCoVt2Usa_pYkK51U78pChmBWMWKduz8FV8srbjW381xqK31gkRxoswnMAUNEQx3Za2v4BYNRJhD9cUtlN1fe2GgKuXCiosxL93fCCUcYz4y0YViauhy6EDkXwb_CWzeLA2-4AbkyNDsd53HKCMOUmhcl-0ijk21Iq4ZSGvUNzYajgvM0zXPuFB6PNc1d5L9CwY19oGxHcVhH8"/>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+        <div class="flex items-center gap-x-4 mb-6">
+            <span class="h-px w-20 bg-primary"></span>
+            <span class="text-primary text-xs font-bold uppercase tracking-[0.25em]">Contact Us</span>
+        </div>
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[0.95]">
+            Let's <span class="text-primary">Build</span><br/>Together
+        </h1>
+    </div>
+</section>
+
+<!-- CONTACT FORM + INFO -->
+<section class="py-24 sm:py-32 bg-background-light dark:bg-background-dark relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style="background-image: linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px);"></div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            <!-- Contact Form -->
+            <div class="lg:col-span-7">
+                <div class="bg-white dark:bg-surface-dark p-8 md:p-12 border border-gray-100 dark:border-white/5 rounded-sm relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-primary/50 to-transparent"></div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Request a Quote</h2>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-10">Fill in the details below and our team will get back to you within 24 hours.</p>
+
+                    <form action="#" method="POST" class="space-y-6" id="contact-form">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2" for="name">Full Name</label>
+                                <input class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="name" name="name" placeholder="Your full name" required type="text"/>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2" for="email">Email Address</label>
+                                <input class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="email" name="email" placeholder="your@email.com" required type="email"/>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2" for="phone">Phone Number</label>
+                                <input class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="phone" name="phone" placeholder="+234 ..." type="tel"/>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2" for="service">Service Interest</label>
+                                <select class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none" id="service" name="service">
+                                    <option class="bg-white dark:bg-surface-dark" value="">Select a Service</option>
+                                    <option class="bg-white dark:bg-surface-dark" value="civil-engineering">Civil Engineering</option>
+                                    <option class="bg-white dark:bg-surface-dark" value="project-management">Project Management</option>
+                                    <option class="bg-white dark:bg-surface-dark" value="general-contracting">General Contracting</option>
+                                    <option class="bg-white dark:bg-surface-dark" value="renovation">Renovation & Remodeling</option>
+                                    <option class="bg-white dark:bg-surface-dark" value="sustainable-building">Sustainable Building</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2" for="message">Project Details</label>
+                            <textarea class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none" id="message" name="message" placeholder="Tell us about your project..." required rows="5"></textarea>
+                        </div>
+                        <button class="w-full sm:w-auto rounded-sm bg-primary px-8 py-4 text-xs font-bold text-background-dark hover:bg-white hover:text-background-dark border border-transparent hover:border-primary transition-all uppercase tracking-widest shadow-[0_0_15px_rgba(235,177,47,0.2)] hover:shadow-[0_0_25px_rgba(235,177,47,0.4)]" type="submit">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="lg:col-span-5 flex flex-col gap-6">
+                <div class="bg-white dark:bg-surface-dark p-8 border border-gray-100 dark:border-white/5 rounded-sm">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6">Get in Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="flex h-10 w-10 shrink-0 items-center justify-center bg-primary/10 text-primary rounded-sm">
+                                <span class="material-symbols-outlined text-xl">location_on</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Head Office</h4>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">123 Construction Avenue,<br/>Victoria Island, Lagos, Nigeria</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="flex h-10 w-10 shrink-0 items-center justify-center bg-primary/10 text-primary rounded-sm">
+                                <span class="material-symbols-outlined text-xl">call</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Phone</h4>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">+234 800 123 4567</p>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">+234 800 765 4321</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="flex h-10 w-10 shrink-0 items-center justify-center bg-primary/10 text-primary rounded-sm">
+                                <span class="material-symbols-outlined text-xl">mail</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Email</h4>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">info@chuksel.com</p>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">projects@chuksel.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="flex h-10 w-10 shrink-0 items-center justify-center bg-primary/10 text-primary rounded-sm">
+                                <span class="material-symbols-outlined text-xl">schedule</span>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Working Hours</h4>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">Mon – Fri: 8:00 AM – 6:00 PM</p>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">Sat: 9:00 AM – 1:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Social Links -->
+                <div class="bg-white dark:bg-surface-dark p-8 border border-gray-100 dark:border-white/5 rounded-sm">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">Follow Us</h3>
+                    <div class="flex gap-3">
+                        <a class="h-12 w-12 flex items-center justify-center bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-slate-600 dark:text-gray-400 hover:bg-primary hover:text-background-dark hover:border-primary rounded-sm transition-all" href="#">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg>
+                        </a>
+                        <a class="h-12 w-12 flex items-center justify-center bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-slate-600 dark:text-gray-400 hover:bg-primary hover:text-background-dark hover:border-primary rounded-sm transition-all" href="#">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill-rule="evenodd"></path></svg>
+                        </a>
+                        <a class="h-12 w-12 flex items-center justify-center bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-slate-600 dark:text-gray-400 hover:bg-primary hover:text-background-dark hover:border-primary rounded-sm transition-all" href="#">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+                        </a>
+                        <a class="h-12 w-12 flex items-center justify-center bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-slate-600 dark:text-gray-400 hover:bg-primary hover:text-background-dark hover:border-primary rounded-sm transition-all" href="#">
+                            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Map -->
+                <div class="bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 rounded-sm overflow-hidden aspect-video">
+                    <iframe allowfullscreen="" class="w-full h-full border-0 grayscale-[50%] hover:grayscale-0 transition-all duration-500" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7272099269427!2d3.4206!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53a2e!2sVictoria+Island!5e0!3m2!1sen!2sng!4v1234567890" title="CCL Office Location"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

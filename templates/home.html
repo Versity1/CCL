@@ -1,0 +1,509 @@
+{% extends "base.html" %}
+
+{% block title %}Chuksel Construction Limited (CCL) - Building Excellence{% endblock %}
+
+{% block extra_styles %}
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        .break-inside-avoid {
+            break-inside: avoid;
+        }
+        .clip-slant {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 10;
+        }
+        .slide-content {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .slide.active .slide-content {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.3s;
+        }
+{% endblock %}
+
+{% block content %}
+<!-- HERO SLIDER -->
+<section class="relative h-screen min-h-[700px] w-full bg-background-dark overflow-hidden slider-container group" id="hero-slider">
+    <div class="slide active" id="slide-1">
+        <div class="absolute inset-0">
+            <img alt="Modern skyscraper construction at dusk" class="h-full w-full object-cover opacity-60 mix-blend-overlay transition-transform duration-[10s] ease-linear scale-100 hover:scale-110" src="{{ url_for('static', filename='images/hero_exterior.jpg') }}"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80"></div>
+        </div>
+        <div class="mx-auto flex h-full max-w-7xl items-center px-6 lg:px-8 relative z-20">
+            <div class="max-w-4xl slide-content">
+                <div class="flex items-center gap-x-4 mb-8">
+                    <span class="h-px w-20 bg-primary"></span>
+                    <span class="text-primary text-xs font-bold uppercase tracking-[0.25em]">Architectural Vision</span>
+                </div>
+                <h1 class="text-5xl font-black tracking-tight text-white sm:text-6xl md:text-8xl mb-8 leading-[0.95] drop-shadow-lg">
+                    Defining <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#F3CF55] to-white">Skyline Horizons</span>
+                </h1>
+                <p class="mt-6 text-lg sm:text-xl leading-8 text-gray-200 font-light max-w-2xl border-l-4 border-primary pl-6">
+                    We engineer iconic structures that redefine modern living. Precision, safety, and innovation are the cornerstones of our developments.
+                </p>
+                <div class="mt-12 flex flex-wrap items-center gap-4 sm:gap-6">
+                    <a class="rounded-sm bg-primary px-8 sm:px-10 py-4 sm:py-5 text-sm font-bold text-background-dark shadow-[0_0_25px_rgba(235,177,47,0.3)] hover:shadow-[0_0_40px_rgba(235,177,47,0.6)] hover:bg-white hover:text-background-dark transition-all uppercase tracking-widest transform hover:-translate-y-1" href="{{ url_for('contact') }}">
+                        Request a Quote
+                    </a>
+                    <a class="group text-sm font-bold leading-6 text-white border border-white/30 px-6 sm:px-8 py-3 sm:py-4 hover:bg-white/10 hover:border-primary hover:text-primary transition-all uppercase tracking-widest flex items-center gap-3" href="{{ url_for('projects') }}">
+                        Our Portfolio <span class="material-symbols-outlined text-lg group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide" id="slide-2">
+        <div class="absolute inset-0">
+            <img alt="Construction site drywalling in progress" class="h-full w-full object-cover opacity-60 mix-blend-overlay transition-transform duration-[10s] ease-linear scale-100 hover:scale-110" src="{{ url_for('static', filename='images/construction-corridor.jpg') }}"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80"></div>
+        </div>
+        <div class="mx-auto flex h-full max-w-7xl items-center px-6 lg:px-8 relative z-20">
+            <div class="max-w-4xl slide-content">
+                <div class="flex items-center gap-x-4 mb-8">
+                    <span class="h-px w-20 bg-primary"></span>
+                    <span class="text-primary text-xs font-bold uppercase tracking-[0.25em]">Industrial Strength</span>
+                </div>
+                <h1 class="text-5xl font-black tracking-tight text-white sm:text-6xl md:text-8xl mb-8 leading-[0.95] drop-shadow-lg">
+                    Powering <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#F3CF55] to-white">Modern Infrastructure</span>
+                </h1>
+                <p class="mt-6 text-lg sm:text-xl leading-8 text-gray-200 font-light max-w-2xl border-l-4 border-primary pl-6">
+                    From interior finishing to large-scale commercial builds, our expertise ensures robust foundations for the future.
+                </p>
+                <div class="mt-12 flex flex-wrap items-center gap-4 sm:gap-6">
+                    <a class="rounded-sm bg-primary px-8 sm:px-10 py-4 sm:py-5 text-sm font-bold text-background-dark shadow-[0_0_25px_rgba(235,177,47,0.3)] hover:shadow-[0_0_40px_rgba(235,177,47,0.6)] hover:bg-white hover:text-background-dark transition-all uppercase tracking-widest transform hover:-translate-y-1" href="{{ url_for('contact') }}">
+                        Request a Quote
+                    </a>
+                    <a class="group text-sm font-bold leading-6 text-white border border-white/30 px-6 sm:px-8 py-3 sm:py-4 hover:bg-white/10 hover:border-primary hover:text-primary transition-all uppercase tracking-widest flex items-center gap-3" href="{{ url_for('projects') }}">
+                        Our Portfolio <span class="material-symbols-outlined text-lg group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slide" id="slide-3">
+        <div class="absolute inset-0">
+            <img alt="Interior construction room with drywall panels" class="h-full w-full object-cover opacity-60 mix-blend-overlay transition-transform duration-[10s] ease-linear scale-100 hover:scale-110" src="{{ url_for('static', filename='images/construction-room.jpg') }}"/>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80"></div>
+        </div>
+        <div class="mx-auto flex h-full max-w-7xl items-center px-6 lg:px-8 relative z-20">
+            <div class="max-w-4xl slide-content">
+                <div class="flex items-center gap-x-4 mb-8">
+                    <span class="h-px w-20 bg-primary"></span>
+                    <span class="text-primary text-xs font-bold uppercase tracking-[0.25em]">Premium Finish</span>
+                </div>
+                <h1 class="text-5xl font-black tracking-tight text-white sm:text-6xl md:text-8xl mb-8 leading-[0.95] drop-shadow-lg">
+                    Details of <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#F3CF55] to-white">Unmatched Quality</span>
+                </h1>
+                <p class="mt-6 text-lg sm:text-xl leading-8 text-gray-200 font-light max-w-2xl border-l-4 border-primary pl-6">
+                    Exquisite craftsmanship in every corner. We deliver high-end interior solutions that blend aesthetic beauty with structural integrity.
+                </p>
+                <div class="mt-12 flex flex-wrap items-center gap-4 sm:gap-6">
+                    <a class="rounded-sm bg-primary px-8 sm:px-10 py-4 sm:py-5 text-sm font-bold text-background-dark shadow-[0_0_25px_rgba(235,177,47,0.3)] hover:shadow-[0_0_40px_rgba(235,177,47,0.6)] hover:bg-white hover:text-background-dark transition-all uppercase tracking-widest transform hover:-translate-y-1" href="{{ url_for('contact') }}">
+                        Request a Quote
+                    </a>
+                    <a class="group text-sm font-bold leading-6 text-white border border-white/30 px-6 sm:px-8 py-3 sm:py-4 hover:bg-white/10 hover:border-primary hover:text-primary transition-all uppercase tracking-widest flex items-center gap-3" href="{{ url_for('projects') }}">
+                        Our Portfolio <span class="material-symbols-outlined text-lg group-hover:translate-x-2 transition-transform">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Slider Controls -->
+    <div class="absolute inset-x-0 bottom-0 z-30 flex justify-between items-end px-6 lg:px-8 pb-10 max-w-7xl mx-auto pointer-events-none">
+        <div class="flex gap-4 pointer-events-auto">
+            <button aria-label="Go to slide 1" class="group relative h-1 w-12 bg-white/20 hover:bg-white/40 transition-colors overflow-hidden rounded-full focus:outline-none" onclick="goToSlide(0)">
+                <div class="absolute inset-0 bg-primary w-full origin-left transform scale-x-100 transition-transform duration-[5000ms] ease-linear" id="progress-1"></div>
+            </button>
+            <button aria-label="Go to slide 2" class="group relative h-1 w-12 bg-white/20 hover:bg-white/40 transition-colors overflow-hidden rounded-full focus:outline-none" onclick="goToSlide(1)">
+                <div class="absolute inset-0 bg-primary w-full origin-left transform scale-x-0 transition-transform duration-[5000ms] ease-linear" id="progress-2"></div>
+            </button>
+            <button aria-label="Go to slide 3" class="group relative h-1 w-12 bg-white/20 hover:bg-white/40 transition-colors overflow-hidden rounded-full focus:outline-none" onclick="goToSlide(2)">
+                <div class="absolute inset-0 bg-primary w-full origin-left transform scale-x-0 transition-transform duration-[5000ms] ease-linear" id="progress-3"></div>
+            </button>
+        </div>
+        <div class="flex gap-2 pointer-events-auto">
+            <button aria-label="Previous slide" class="h-12 w-12 border border-white/20 hover:border-primary hover:bg-primary hover:text-background-dark text-white flex items-center justify-center rounded-sm transition-all" onclick="prevSlide()">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <button aria-label="Next slide" class="h-12 w-12 border border-white/20 hover:border-primary hover:bg-primary hover:text-background-dark text-white flex items-center justify-center rounded-sm transition-all" onclick="nextSlide()">
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="border-y border-white/5 bg-surface-darker relative z-20">
+    <div class="mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-8">
+        <div class="grid grid-cols-2 gap-8 sm:gap-12 sm:grid-cols-4 sm:divide-x divide-white/5">
+            <div class="flex flex-col gap-2 sm:px-6 text-center sm:text-left">
+                <span class="text-4xl sm:text-5xl font-black text-white tracking-tighter">25<span class="text-primary">+</span></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500">Years Experience</span>
+            </div>
+            <div class="flex flex-col gap-2 sm:px-6 text-center sm:text-left">
+                <span class="text-4xl sm:text-5xl font-black text-white tracking-tighter">100<span class="text-primary">+</span></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500">Projects Delivered</span>
+            </div>
+            <div class="flex flex-col gap-2 sm:px-6 text-center sm:text-left">
+                <span class="text-4xl sm:text-5xl font-black text-white tracking-tighter">500<span class="text-primary">+</span></span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500">Skilled Workforce</span>
+            </div>
+            <div class="flex flex-col gap-2 sm:px-6 text-center sm:text-left">
+                <span class="text-4xl sm:text-5xl font-black text-white tracking-tighter">12</span>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-gray-500">Industry Awards</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section class="py-24 sm:py-32 bg-background-light dark:bg-background-dark relative overflow-hidden" id="services">
+    <div class="absolute inset-0 bg-grid-pattern bg-[length:40px_40px] opacity-[0.03] dark:opacity-[0.05] pointer-events-none"></div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 sm:mb-20 gap-8">
+            <div class="max-w-2xl">
+                <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Our Expertise</h2>
+                <p class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white sm:text-5xl">Engineered for <br/>Excellence</p>
+            </div>
+            <p class="max-w-md text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed md:text-right">
+                Comprehensive construction services ensuring quality and precision at every stage of development.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="group relative flex flex-col gap-8 bg-white p-8 sm:p-10 shadow-sm hover:shadow-2xl transition-all duration-500 dark:bg-surface-dark border border-gray-100 dark:border-white/5 hover:-translate-y-2">
+                <div class="flex justify-between items-start">
+                    <div class="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center bg-gray-50 dark:bg-white/5 text-slate-900 dark:text-white group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                        <span class="material-symbols-outlined text-2xl sm:text-3xl">architecture</span>
+                    </div>
+                    <span class="text-gray-300 dark:text-gray-700 text-5xl sm:text-6xl font-black opacity-20 group-hover:opacity-10 group-hover:text-primary transition-all">01</span>
+                </div>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-primary dark:text-white mb-4 transition-colors">Civil Engineering</h3>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Expert infrastructure planning and execution for roads, bridges, and public works with precision engineering.
+                    </p>
+                </div>
+                <div class="mt-auto pt-8 border-t border-gray-100 dark:border-white/5">
+                    <a class="inline-flex items-center text-xs font-bold text-slate-900 group-hover:text-primary dark:text-white uppercase tracking-widest" href="{{ url_for('services') }}">
+                        Learn more <span class="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <div class="group relative flex flex-col gap-8 bg-white p-8 sm:p-10 shadow-sm hover:shadow-2xl transition-all duration-500 dark:bg-surface-dark border border-gray-100 dark:border-white/5 hover:-translate-y-2">
+                <div class="flex justify-between items-start">
+                    <div class="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center bg-gray-50 dark:bg-white/5 text-slate-900 dark:text-white group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                        <span class="material-symbols-outlined text-2xl sm:text-3xl">assignment</span>
+                    </div>
+                    <span class="text-gray-300 dark:text-gray-700 text-5xl sm:text-6xl font-black opacity-20 group-hover:opacity-10 group-hover:text-primary transition-all">02</span>
+                </div>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-primary dark:text-white mb-4 transition-colors">Project Management</h3>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                        End-to-end management ensuring projects are delivered on time and within budget through meticulous planning.
+                    </p>
+                </div>
+                <div class="mt-auto pt-8 border-t border-gray-100 dark:border-white/5">
+                    <a class="inline-flex items-center text-xs font-bold text-slate-900 group-hover:text-primary dark:text-white uppercase tracking-widest" href="{{ url_for('services') }}">
+                        Learn more <span class="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+            <div class="group relative flex flex-col gap-8 bg-white p-8 sm:p-10 shadow-sm hover:shadow-2xl transition-all duration-500 dark:bg-surface-dark border border-gray-100 dark:border-white/5 hover:-translate-y-2">
+                <div class="flex justify-between items-start">
+                    <div class="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center bg-gray-50 dark:bg-white/5 text-slate-900 dark:text-white group-hover:bg-primary group-hover:text-background-dark transition-colors">
+                        <span class="material-symbols-outlined text-2xl sm:text-3xl">domain</span>
+                    </div>
+                    <span class="text-gray-300 dark:text-gray-700 text-5xl sm:text-6xl font-black opacity-20 group-hover:opacity-10 group-hover:text-primary transition-all">03</span>
+                </div>
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-primary dark:text-white mb-4 transition-colors">General Contracting</h3>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+                        Comprehensive construction services for commercial high-rises and large-scale residential developments.
+                    </p>
+                </div>
+                <div class="mt-auto pt-8 border-t border-gray-100 dark:border-white/5">
+                    <a class="inline-flex items-center text-xs font-bold text-slate-900 group-hover:text-primary dark:text-white uppercase tracking-widest" href="{{ url_for('services') }}">
+                        Learn more <span class="material-symbols-outlined ml-2 text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECT PROGRESS (Real Images) -->
+<section class="py-24 sm:py-32 bg-gray-100 dark:bg-[#0F1116] border-t border-gray-200 dark:border-white/5" id="progress">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+            <div class="max-w-3xl">
+                <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">On Site</h2>
+                <p class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white sm:text-5xl mb-6">Project Progress</p>
+                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl">A raw, behind-the-scenes look at our active sites. From framing to finishing, witness the phases of modern construction.</p>
+            </div>
+            <div>
+                <a class="inline-flex items-center justify-center rounded-sm border border-slate-300 dark:border-slate-700 bg-transparent px-6 py-3 text-xs font-bold text-slate-900 dark:text-white hover:border-primary hover:bg-primary hover:text-background-dark transition-all uppercase tracking-widest" href="{{ url_for('projects') }}">
+                    View Gallery
+                </a>
+            </div>
+        </div>
+        <div class="masonry-grid">
+            <!-- Real Construction Image 1 -->
+            <div class="break-inside-avoid mb-6 group relative overflow-hidden rounded-sm bg-black">
+                <img alt="Interior corridor showing drywall installation and ceiling work" class="w-full h-auto transform transition duration-700 group-hover:scale-110 group-hover:opacity-60" src="{{ url_for('static', filename='images/construction-corridor.jpg') }}"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-6 sm:p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div class="bg-primary px-3 py-1 inline-block text-[10px] font-bold uppercase tracking-widest text-background-dark mb-2">Phase 1</div>
+                    <h4 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide">Drywall Installation</h4>
+                </div>
+            </div>
+            <!-- Drywall Attic Image -->
+            <div class="break-inside-avoid mb-6 group relative overflow-hidden rounded-sm bg-black">
+                <img alt="Attic space with completed drywall finishing" class="w-full h-auto transform transition duration-700 group-hover:scale-110 group-hover:opacity-60" src="{{ url_for('static', filename='images/proj_interior.jpeg') }}"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-6 sm:p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div class="bg-primary px-3 py-1 inline-block text-[10px] font-bold uppercase tracking-widest text-background-dark mb-2">Phase 2</div>
+                    <h4 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide">Ceiling Finishing</h4>
+                </div>
+            </div>
+            <!-- Real Construction Image 2 -->
+            <div class="break-inside-avoid mb-6 group relative overflow-hidden rounded-sm bg-black">
+                <img alt="Room interior with blue drywall panels and electrical rough-in" class="w-full h-auto transform transition duration-700 group-hover:scale-110 group-hover:opacity-60" src="{{ url_for('static', filename='images/construction-room.jpg') }}"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-6 sm:p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div class="bg-primary px-3 py-1 inline-block text-[10px] font-bold uppercase tracking-widest text-background-dark mb-2">Phase 3</div>
+                    <h4 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide">Electrical Rough-in</h4>
+                </div>
+            </div>
+            <!-- Drywall joints -->
+            <div class="break-inside-avoid mb-6 group relative overflow-hidden rounded-sm bg-black">
+                <img alt="Room with drywall joints being compounded" class="w-full h-auto transform transition duration-700 group-hover:scale-110 group-hover:opacity-60" src="{{ url_for('static', filename='images/proj_developer.png') }}"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                <div class="absolute bottom-0 left-0 p-6 sm:p-8 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                    <div class="bg-primary px-3 py-1 inline-block text-[10px] font-bold uppercase tracking-widest text-background-dark mb-2">Phase 2</div>
+                    <h4 class="text-white font-bold text-lg sm:text-xl uppercase tracking-wide">Joint Compounding</h4>
+                </div>
+            </div>
+            <!-- Gallery CTA -->
+            <div class="break-inside-avoid mb-6 group relative overflow-hidden rounded-sm bg-surface-darker border border-white/5 flex items-center justify-center min-h-[300px]">
+                <div class="text-center p-8">
+                    <div class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center mx-auto mb-6 group-hover:border-primary group-hover:bg-primary/10 transition-colors">
+                        <span class="material-symbols-outlined text-white text-3xl group-hover:text-primary transition-colors">add_a_photo</span>
+                    </div>
+                    <h4 class="text-white font-bold text-lg uppercase tracking-wide mb-2">View Full Gallery</h4>
+                    <a class="text-gray-500 text-sm hover:text-primary transition-colors font-medium" href="{{ url_for('projects') }}">See all projects</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section class="py-24 sm:py-32 bg-surface-light dark:bg-background-dark relative" id="projects">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6">
+            <div class="max-w-2xl">
+                <h2 class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Portfolio</h2>
+                <p class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900 dark:text-white sm:text-5xl">Featured Projects</p>
+            </div>
+            <a class="group inline-flex items-center text-sm font-bold text-slate-900 dark:text-white hover:text-primary transition-colors uppercase tracking-widest" href="{{ url_for('projects') }}">
+                View All Projects <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+        </div>
+        <div class="grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-2 lg:grid-cols-3">
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden rounded-sm aspect-[4/3] mb-6">
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-multiply"></div>
+                    <img alt="Modern glass skyscraper architecture" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ url_for('static', filename='images/hero_exterior.jpg') }}"/>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                        <span class="text-[10px] font-bold text-white uppercase tracking-wider">Commercial</span>
+                    </div>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">City Center Mall</h3>
+                <p class="text-slate-500 text-sm flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-base">location_on</span> Lagos, Nigeria
+                </p>
+                <p class="text-slate-600 dark:text-gray-400 text-sm line-clamp-2">
+                    A 45-story mixed-use development featuring retail, office spaces, and a luxury hotel.
+                </p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden rounded-sm aspect-[4/3] mb-6">
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-multiply"></div>
+                    <img alt="Highway expansion project" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ url_for('static', filename='images/proj_interior.jpeg') }}"/>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                        <span class="text-[10px] font-bold text-white uppercase tracking-wider">Infrastructure</span>
+                    </div>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Highway 42 Expansion</h3>
+                <p class="text-slate-500 text-sm flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-base">location_on</span> Abuja, Nigeria
+                </p>
+                <p class="text-slate-600 dark:text-gray-400 text-sm line-clamp-2">
+                    Major infrastructure overhaul widening 20 miles of interstate highway to reduce congestion.
+                </p>
+            </div>
+            <div class="group cursor-pointer">
+                <div class="relative overflow-hidden rounded-sm aspect-[4/3] mb-6">
+                    <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-multiply"></div>
+                    <img alt="Luxury apartment complex exterior" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ url_for('static', filename='images/proj_luxury.jpg') }}"/>
+                    <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-white/20">
+                        <span class="text-[10px] font-bold text-white uppercase tracking-wider">Residential</span>
+                    </div>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Skyline Residences</h3>
+                <p class="text-slate-500 text-sm flex items-center gap-2 mb-4">
+                    <span class="material-symbols-outlined text-base">location_on</span> Port Harcourt, Nigeria
+                </p>
+                <p class="text-slate-600 dark:text-gray-400 text-sm line-clamp-2">
+                    Premium waterfront residential complex with 300 units and state-of-the-art amenities.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INVESTORS -->
+<section class="relative isolate overflow-hidden bg-surface-darker py-24 sm:py-32" id="investors">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-background-dark to-background-dark"></div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 items-center">
+            <div class="max-w-xl">
+                <div class="flex items-center gap-x-4 mb-6">
+                    <span class="h-px w-10 bg-primary"></span>
+                    <span class="text-primary text-xs font-bold uppercase tracking-[0.2em]">Financial Performance</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-white sm:text-5xl mb-8">Invest in <br/><span class="text-primary">Sustainable Growth</span></h2>
+                <p class="text-base sm:text-lg leading-relaxed text-gray-400 mb-10">
+                    CCL offers robust investment opportunities in high-yield infrastructure projects. We prioritize transparency, sustainability, and long-term value creation for our stakeholders.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a class="rounded-sm bg-white px-6 sm:px-8 py-3 text-xs font-bold text-background-dark hover:bg-gray-200 transition-colors uppercase tracking-widest" href="{{ url_for('contact') }}">
+                        Investor Relations
+                    </a>
+                    <a class="rounded-sm border border-white/20 bg-transparent px-6 sm:px-8 py-3 text-xs font-bold text-white hover:bg-white/5 transition-colors uppercase tracking-widest" href="#">
+                        Annual Report 2024
+                    </a>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="bg-white/5 p-6 sm:p-8 border border-white/10 rounded-sm hover:border-primary/50 transition-colors group">
+                    <div class="bg-background-dark w-12 h-12 flex items-center justify-center rounded mb-6 group-hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-primary text-2xl group-hover:text-background-dark">trending_up</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Consistent Growth</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">15% YoY revenue increase continuously over the last decade.</p>
+                </div>
+                <div class="bg-white/5 p-6 sm:p-8 border border-white/10 rounded-sm hover:border-primary/50 transition-colors group">
+                    <div class="bg-background-dark w-12 h-12 flex items-center justify-center rounded mb-6 group-hover:bg-primary transition-colors">
+                        <span class="material-symbols-outlined text-primary text-2xl group-hover:text-background-dark">security</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Secure Assets</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">Diversified portfolio across government and private sectors.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-primary relative overflow-hidden py-20 sm:py-24" id="cta">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-center">
+        <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-background-dark sm:text-5xl mb-6">
+            Ready to Build the Future?
+        </h2>
+        <p class="text-lg sm:text-xl text-background-dark/80 font-medium max-w-2xl mx-auto mb-10">
+            Get a comprehensive quote or consultation from our engineering experts today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a class="inline-flex items-center justify-center rounded-sm bg-background-dark px-8 sm:px-10 py-4 text-sm font-bold text-white hover:bg-black transition-colors uppercase tracking-widest shadow-lg" href="{{ url_for('contact') }}">
+                Get Started
+            </a>
+            <a class="inline-flex items-center justify-center rounded-sm border-2 border-background-dark bg-transparent px-8 sm:px-10 py-4 text-sm font-bold text-background-dark hover:bg-background-dark hover:text-white transition-colors uppercase tracking-widest" href="{{ url_for('contact') }}">
+                Contact Sales
+            </a>
+        </div>
+    </div>
+    <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23000000\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const progressBars = [
+        document.getElementById('progress-1'),
+        document.getElementById('progress-2'),
+        document.getElementById('progress-3')
+    ];
+    let autoSlideInterval;
+    function updateSlider() {
+        slides.forEach((slide, index) => {
+            if (index === currentSlide) {
+                slide.classList.add('active');
+                progressBars[index].style.transform = 'scaleX(1)';
+            } else {
+                slide.classList.remove('active');
+                progressBars[index].style.transform = 'scaleX(0)';
+            }
+        });
+    }
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlider();
+        resetInterval();
+    }
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateSlider();
+        resetInterval();
+    }
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+        resetInterval();
+    }
+    function resetInterval() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(nextSlide, 5000);
+    }
+    resetInterval();
+</script>
+{% endblock %}

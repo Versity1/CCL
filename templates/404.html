@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}404 - Page Not Found | CCL{% endblock %}
+{% block meta_description %}The page you're looking for doesn't exist. Return to Chuksel Construction Limited's homepage.{% endblock %}
+
+{% block content %}
+<section class="relative min-h-[80vh] flex items-center justify-center bg-background-light dark:bg-background-dark overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style="background-image: linear-gradient(to right, #1f2937 1px, transparent 1px), linear-gradient(to bottom, #1f2937 1px, transparent 1px); background-size: 40px 40px;"></div>
+    <!-- Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div class="text-center px-6 relative z-10">
+        <!-- Large 404 -->
+        <div class="relative mb-8">
+            <h1 class="text-[12rem] sm:text-[16rem] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-primary/40 to-transparent leading-none select-none">
+                404
+            </h1>
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div class="bg-white dark:bg-surface-dark p-6 rounded-2xl shadow-2xl border border-gray-100 dark:border-white/10">
+                    <span class="material-symbols-outlined text-6xl text-primary">construction</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
+            Page Under Construction
+        </h2>
+        <p class="text-lg text-slate-500 dark:text-gray-400 font-light max-w-md mx-auto mb-10">
+            The page you're looking for doesn't exist or has been moved. Let's get you back on track.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a class="inline-flex items-center justify-center rounded-sm bg-primary px-8 py-4 text-sm font-bold text-background-dark shadow-[0_0_25px_rgba(235,177,47,0.3)] hover:shadow-[0_0_40px_rgba(235,177,47,0.6)] hover:bg-white hover:text-background-dark transition-all uppercase tracking-widest transform hover:-translate-y-0.5" href="{{ url_for('home') }}">
+                <span class="material-symbols-outlined mr-2 text-lg">home</span>
+                Back to Home
+            </a>
+            <a class="inline-flex items-center justify-center rounded-sm border border-slate-300 dark:border-white/20 bg-transparent px-8 py-4 text-sm font-bold text-slate-900 dark:text-white hover:border-primary hover:text-primary transition-all uppercase tracking-widest" href="{{ url_for('contact') }}">
+                <span class="material-symbols-outlined mr-2 text-lg">mail</span>
+                Contact Us
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
