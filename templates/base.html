@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>{% block title %}Chuksel Construction Limited (CCL){% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}Chuksel Construction Limited (CCL) - Premier construction company delivering excellence in civil engineering, project management, and general contracting.{% endblock %}"/>
+    <meta name="description" content="{% block meta_description %}Chuksel Construction Limited (CCL) - Premier construction company delivering excellence in drywall tapping and jointing, project management, and general contracting.{% endblock %}"/>
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/ccl-logo.png') }}">
     <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/ccl-logo.png') }}">
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -117,10 +117,6 @@
             <!-- Logo -->
             <a href="{{ url_for('home') }}" class="flex items-center gap-2">
                 <img src="{{ url_for('static', filename='images/ccl-logo.png') }}" alt="CCL Logo" class="h-12 w-auto">
-                <div class="flex flex-col leading-none">
-                    <span class="text-lg font-bold text-slate-900 dark:text-white tracking-tight">CCL</span>
-                    <span class="text-[9px] font-medium text-slate-500 dark:text-gray-500 uppercase tracking-[0.15em]">Construction</span>
-                </div>
             </a>
 
             <!-- Desktop Nav -->
@@ -236,7 +232,7 @@
                     <div>
                         <h3 class="text-xs font-bold leading-6 text-white uppercase tracking-widest mb-6">Services</h3>
                         <ul class="space-y-4" role="list">
-                            <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('services') }}">Civil Engineering</a></li>
+                            <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('services') }}">Drywall Tapping and Jointing</a></li>
                             <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('services') }}">Project Management</a></li>
                             <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('services') }}">General Contracting</a></li>
                             <li><a class="text-sm leading-6 text-gray-400 hover:text-primary transition-colors" href="{{ url_for('services') }}">Renovation</a></li>
@@ -255,11 +251,11 @@
                         <ul class="space-y-4" role="list">
                             <li class="flex items-start gap-3 text-sm text-gray-400">
                                 <span class="material-symbols-outlined text-sm text-primary mt-0.5">location_on</span>
-                                <span>123 Construction Ave,<br/>Lagos, Nigeria</span>
+                                <span>Old Dover Road,<br/>London, SE3 7BT</span>
                             </li>
                             <li class="flex items-center gap-3 text-sm text-gray-400">
                                 <span class="material-symbols-outlined text-sm text-primary">call</span>
-                                +234 800 123 4567
+                                +44 7404 100860
                             </li>
                             <li class="flex items-center gap-3 text-sm text-gray-400">
                                 <span class="material-symbols-outlined text-sm text-primary">mail</span>

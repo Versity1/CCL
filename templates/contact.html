@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}Contact Us - Chuksel Construction Limited{% endblock %}
-{% block meta_description %}Get in touch with Chuksel Construction Limited. Request a quote, schedule a consultation, or reach us at our Lagos office.{% endblock %}
+{% block meta_description %}Get in touch with Chuksel Construction Limited. Request a quote, schedule a consultation, or reach us at our London office.{% endblock %}
 
 {% block content %}
 <!-- HERO -->
 <section class="relative h-[40vh] sm:h-[50vh] min-h-[350px] flex items-center bg-background-dark overflow-hidden">
     <div class="absolute inset-0">
-        <img alt="Modern office building" class="h-full w-full object-cover opacity-25" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSO7xPx-kAGCOv9zN8k9pg8V5Ob29pCr2EpoTCbgQf6EVvhtod4G49LBt9vTKGSMCoVt2Usa_pYkK51U78pChmBWMWKduz8FV8srbjW381xqK31gkRxoswnMAUNEQx3Za2v4BYNRJhD9cUtlN1fe2GgKuXCiosxL93fCCUcYz4y0YViauhy6EDkXwb_CWzeLA2-4AbkyNDsd53HKCMOUmhcl-0ijk21Iq4ZSGvUNzYajgvM0zXPuFB6PNc1d5L9CwY19oGxHcVhH8"/>
+        <img alt="Dry lining workspace" class="h-full w-full object-cover opacity-25" src="{{ url_for('static', filename='images/taping-jointing.png') }}"/>
         <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
     </div>
@@ -17,7 +17,7 @@
             <span class="text-primary text-xs font-bold uppercase tracking-[0.25em]">Contact Us</span>
         </div>
         <h1 class="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[0.95]">
-            Let's <span class="text-primary">Build</span><br/>Together
+            Let's Discuss Your <span class="text-primary">Dry Lining</span><br/>Needs for Your Dream Space!
         </h1>
     </div>
 </section>
@@ -32,7 +32,7 @@
                 <div class="bg-white dark:bg-surface-dark p-8 md:p-12 border border-gray-100 dark:border-white/5 rounded-sm relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-primary/50 to-transparent"></div>
                     <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Request a Quote</h2>
-                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-8">Fill in the details below and our team will get back to you within 24 hours.</p>
+                    <p class="text-sm text-slate-500 dark:text-gray-400 mb-8">Please fill out the form below, and our team at Chuksel Construction Ltd will get back to you promptly to discuss your dry lining needs.</p>
 
                     <!-- Flash Messages -->
                     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -67,13 +67,13 @@
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2" for="phone">Phone Number</label>
-                                <input class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="phone" name="phone" placeholder="+234 ..." type="tel"/>
+                                <input class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm text-slate-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" id="phone" name="phone" placeholder="+44 ..." type="tel"/>
                             </div>
                             <div>
                                 <label class="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2" for="service">Service Interest</label>
                                 <select class="w-full bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-sm px-4 py-3 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none" id="service" name="service">
                                     <option class="bg-white dark:bg-surface-dark" value="">Select a Service</option>
-                                    <option class="bg-white dark:bg-surface-dark" value="civil-engineering">Civil Engineering</option>
+                                    <option class="bg-white dark:bg-surface-dark" value="drywall-tapping">Drywall Tapping and Jointing </option>
                                     <option class="bg-white dark:bg-surface-dark" value="project-management">Project Management</option>
                                     <option class="bg-white dark:bg-surface-dark" value="general-contracting">General Contracting</option>
                                     <option class="bg-white dark:bg-surface-dark" value="renovation">Renovation & Remodeling</option>
@@ -103,7 +103,7 @@
                             </div>
                             <div>
                                 <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Head Office</h4>
-                                <p class="text-sm text-slate-500 dark:text-gray-400">123 Construction Avenue,<br/>Victoria Island, Lagos, Nigeria</p>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">Old Dover Road,<br/>London, SE3 7BT</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -112,8 +112,7 @@
                             </div>
                             <div>
                                 <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-1">Phone</h4>
-                                <p class="text-sm text-slate-500 dark:text-gray-400">+234 800 123 4567</p>
-                                <p class="text-sm text-slate-500 dark:text-gray-400">+234 800 765 4321</p>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">+44 7404 100860</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -122,8 +121,8 @@
                             </div>
                             <div>
                                 <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Email Us</h3>
-                                <p class="text-sm text-slate-500 dark:text-gray-400">ChukselConstructionltd@gmail.com</p>
-                                <p class="text-sm text-slate-500 dark:text-gray-400 mt-1">support@chuksel.com</p>
+                                <p class="text-sm text-slate-500 dark:text-gray-400">chukselconstructionltd@gmail.com</p>
+                                <p class="text-sm text-slate-500 dark:text-gray-400 mt-1">projects@chukselconstructionltd.com</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-4">
@@ -158,7 +157,7 @@
                 </div>
                 <!-- Map -->
                 <div class="bg-white dark:bg-surface-dark border border-gray-100 dark:border-white/5 rounded-sm overflow-hidden aspect-video">
-                    <iframe allowfullscreen="" class="w-full h-full border-0 grayscale-[50%] hover:grayscale-0 transition-all duration-500" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7272099269427!2d3.4206!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53a2e!2sVictoria+Island!5e0!3m2!1sen!2sng!4v1234567890" title="CCL Office Location"></iframe>
+                    <iframe allowfullscreen="" class="w-full h-full border-0 grayscale-[50%] hover:grayscale-0 transition-all duration-500" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2485.5!2d0.0135!3d51.4620!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876036c7a24681d%3A0x!2sOld+Dover+Road%2C+London+SE3+7BT!5e0!3m2!1sen!2suk!4v1234567890" title="CCL Office Location"></iframe>
                 </div>
             </div>
         </div>

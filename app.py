@@ -8,21 +8,25 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "ccl-secret-key-change-in-production")
 
-# ── Mail Configuration (Gmail SMTP) ──────────────────────────────────────
+# ── Mail Configuration ────────────────────────────────────────────────────
 ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "ChukselConstructionltd@gmail.com")
 
-app.config["MAIL_SERVER"] = "mail.chukselconstructionltd.com"
-app.config["MAIL_PORT"] = 587
-app.config["MAIL_USE_TLS"] = True
-app.config["MAIL_USERNAME"] = ADMIN_EMAIL
+app.config["MAIL_SERVER"] = os.environ.get("MAIL_SERVER", "mail.chukselconstructionltd.com")
+app.config["MAIL_PORT"] = int(os.environ.get("MAIL_PORT", "587"))
+app.config["MAIL_USE_TLS"] = os.environ.get("MAIL_USE_TLS", "True").lower() == "true"
+app.config["MAIL_USE_SSL"] = os.environ.get("MAIL_USE_SSL", "False").lower() == "true"
+app.config["MAIL_USERNAME"] = os.environ.get("MAIL_USERNAME", ADMIN_EMAIL)
 app.config["MAIL_PASSWORD"] = os.environ.get("MAIL_PASSWORD", "")
 app.config["MAIL_DEFAULT_SENDER"] = ("Chuksel Construction Ltd", ADMIN_EMAIL)
 
 mail = Mail(app)
 
+# Passenger WSGI compatibility
+application = app
+
 # ── Service label mapping ────────────────────────────────────────────────
 SERVICE_LABELS = {
-    "civil-engineering": "Civil Engineering",
+    "drywall-tapping": "Drywall Tapping and Jointing",
     "project-management": "Project Management",
     "general-contracting": "General Contracting",
     "renovation": "Renovation & Remodeling",
@@ -155,7 +159,9 @@ def contact():
             flash("Your quote request has been sent successfully! We'll get back to you within 24 hours.", "success")
 
         except Exception as e:
+            import traceback
             print(f"[MAIL ERROR] {e}")
+            traceback.print_exc()
             flash("Something went wrong while sending your request. Please try again or contact us directly.", "error")
 
         return redirect(url_for("contact"))

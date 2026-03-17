@@ -1,0 +1,8 @@
+PassengerEnabled On
+PassengerAppRoot /home/$USER/public_html
+PassengerPython /home/$USER/public_html/.venv/bin/python
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ / [L]
